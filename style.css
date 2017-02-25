@@ -1,0 +1,13 @@
+body {
+   /*background-image: url('http://static.lakana.com/media.fox9.com/photo/2015/09/09/cutting%20board_1441798203520_180889_ver1.0.jpg');*/
+   background-size: cover;
+}
+
+div.nav-wrapper, nav {
+   background-color: rgba(14, 11, 18, 0.31);
+}
+
+img {
+   height: 200px;
+   width: 100%;
+}
