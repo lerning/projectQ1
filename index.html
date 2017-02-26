@@ -3,6 +3,7 @@
    <head>
       <meta charset="utf-8">
       <title>mood food</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- Scripts for my app.js, jquery, and the materialize.js  -->
       <script
        src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -16,24 +17,34 @@
       <link rel="stylesheet" href="style.css">
    </head>
    <body>
-      <nav>
+      <nav class="nav-extended">
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo center">the cutting board</a>
+          <a href="#" class="brand-logo center">smooth move</a>
           <!-- <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li><a href="sass.html">Sass</a></li>
             <li><a href="badges.html">Components</a></li>
             <li><a href="collapsible.html">JavaScript</a></li>
           </ul> -->
         </div>
+        <div class="nav-content">
+          <ul class="tabs tabs-transparent">
+            <li class="tab"><a href="#liquids">liquids</a></li>
+            <li class="tab"><a href="#solids">solids</a></li>
+          </ul>
+        </div>
       </nav>
+      <!-- <div id="test1" class="col s12">Test 1</div>
+      <div id="test2" class="col s12">Test 2</div>
+      <div id="test3" class="col s12">Test 3</div>
+      <div id="test4" class="col s12">Test 4</div> -->
 
-      <main class='container'>
+      <section class='container' id="liquids">
          <div class="row">
             <form>
                <!-- This is my input field where users input ingredients -->
-              <div class="col offset-s2 s7">
+              <div class="col s12 offset-m2 m8">
                 <div class="input-field">
-                  <input type="text" placeholder="Enter Ingredients" id="search" name="search" />
+                  <input class="Linput"type="text" style="text-align: center" placeholder="Enter ingredients, seperated by a comma (eg: bananas,blood)" id="search" name="search" />
                </div>
                <!-- <div class="row"></div> -->
                <!-- This is the button that activates the get request for recipes -->
@@ -45,6 +56,26 @@
             </form>
          </div>
          <div id='recipes' class="row"></div>
-      </main>
+      </section>
+      <section class='container' id="solids">
+         <div class="row">
+            <form>
+               <!-- This is my input field where users input ingredients -->
+              <div class="col s12 offset-m2 m8">
+                <div class="input-field">
+                  <input class="Sinput" type="text" style="text-align: center" placeholder="Enter ingredients, seperated by a comma" id="search" name="search" />
+               </div>
+               <!-- <div class="row"></div> -->
+               <!-- This is the button that activates the get request for recipes -->
+              <div class="center">
+                <button class="btn rounded waves-effect waves-light solidB" type="submit" name="action">
+                  <i class="material-icons">search</i>
+                </button>
+              </div>
+            </form>
+         </div>
+         <div id='Srecipes' class="row"></div>
+      </section>
+
    </body>
 </html>
