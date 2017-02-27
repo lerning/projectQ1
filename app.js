@@ -3,8 +3,12 @@ $(document).ready(function(){
    $('button.solidB').click(function(e){
       e.preventDefault();
       $('#Srecipes').empty()
+
+
       userSearch = $('input.Sinput').val()
       if (userSearch !== ''){
+         let title ;
+         let image ;
          $.ajax({
            method: 'GET',
            url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=${userSearch}&limitLicense=false&number=6&ranking=2`,
@@ -16,7 +20,6 @@ $(document).ready(function(){
              for (let r of data){
                  let id = r.id
                  let image = r.image
-               //   console.log(r);
                  let coll = $('<div>').addClass('col s6 m6 l4')
                  let card = $('<div>').addClass('card hoverable')
                  let title = $('<h6>').addClass('card-title center').text(r.title)
@@ -44,11 +47,15 @@ $(document).ready(function(){
                      success: function(data){
                         console.log('data', data);
                         let steps = data[0].steps
+                        // recModal = []
+                        $('div.modal-content').empty()
                         for (s of steps){
+                           console.log(title);
                            console.log(s.step);
                            listData = $('<p>').text(s.step)
+                           // recModal.push(listData)
                            $('div.modal-content').append(listData)
-
+                           // $('div.modal-content').append(recModal)
                         }
                         $('.modal').modal()
                         //  window.location.href = "info.html"
