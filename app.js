@@ -3,8 +3,6 @@ $(document).ready(function(){
    $('button.solidB').click(function(e){
       e.preventDefault();
       $('#Srecipes').empty()
-
-
       userSearch = $('input.Sinput').val()
       if (userSearch !== ''){
          let title ;
@@ -25,7 +23,7 @@ $(document).ready(function(){
                  let title = $('<h6>').addClass('card-title center').text(r.title)
                  let content = $('<div>').addClass('card-content clicky')
                  let link = $('<a>').attr('href', '#modal1')
-                 let recPic = $('<img>').attr({src: r.image, id: r.id})
+                 let recPic = $('<img>').attr({src: r.image, id: r.id, data: r.title})
                  $('#Srecipes').append(coll)
                  coll.append(card)
                  card.append(content)
@@ -38,8 +36,11 @@ $(document).ready(function(){
                $('input').val('')
                // this allows recipes to be shown after clicking the card
                $('img').click(function(){
-                  target = event.target.id
+                  let target = event.target.id
+                  let title = event.target.data
                   console.log('target', target);
+                  console.log('this', this);
+                  $('.modal').modal()
                   $.ajax({
                      method: "GET",
                      url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/${target}/analyzedInstructions`,
@@ -47,17 +48,22 @@ $(document).ready(function(){
                      success: function(data){
                         console.log('data', data);
                         let steps = data[0].steps
+                        let title = event.target.data
+                        console.log('here title',title);
+                        console.log('this inside', this);
                         // recModal = []
                         $('div.modal-content').empty()
                         for (s of steps){
-                           console.log(title);
+                           console.log('title', title);
                            console.log(s.step);
                            listData = $('<p>').text(s.step)
+                           rTitle = $('<h6>').text(title)
                            // recModal.push(listData)
                            $('div.modal-content').append(listData)
+                           $('div.modal-content').append(rTitle)
                            // $('div.modal-content').append(recModal)
                         }
-                        $('.modal').modal()
+                        // $('.modal').modal()
                         //  window.location.href = "info.html"
                      },
                      error: function(){

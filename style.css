@@ -8,7 +8,15 @@ div.nav-wrapper, nav {
 }
 
 img {
-   height: auto;
+   height: 70%;
+   width: 100%;
+}
+.card .card-content{
+   height: 300px;
+}
+.card .card-content .card-title {
+   font-size: 120%;
+   line-height: 20px;
    width: 100%;
 }
 
