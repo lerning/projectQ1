@@ -13,10 +13,9 @@ $(document).ready(function(){
            dataType: 'json',
            success: function(data){
              let ds = data.Search
-            //  console.log('data', data);
             // this loops through the recipe data and eventually creates a div with the recipe image, link, and name
              for (let r of data){
-                 console.log(r);
+               //   console.log(r);
                  let id = r.id
                  var image = r.image
                  var rTitle = r.title
@@ -49,22 +48,27 @@ $(document).ready(function(){
                      success: function(data){
                         $('#recipeRR').empty()
                         $('#momo').empty().addClass('center')
-                        // console.log(data);
-                        if (data != []){
+                        console.log('annoying', data.length);
+                        if (data.length > 0){
+                           console.log('data.0 rec steps', data[0]);
                            let steps = data[0].steps
                            // console.log('kevin was definitely right', image);
                            recTitle = $('<h5>').text(title).attr('style','text-align: center')
-                           recImage = $('<img>').attr({src: image, style: 'width: 50%; height: auto'})
+                           recImage = $('<img>').attr({src: image, style: 'height: 190px; width: auto'})
 
                            $('#momo').append(recTitle)
                            $('#momo').append(recImage)
 
                            for (s of steps){
-                              // console.log(s.step);
+                              // console.log.(s.step);
                               listData = $('<p>').text(s.step)
                               $('#recipeRR').append(listData)
                               // $('div.modal-content').append(recModal)
                            }
+                        } else {
+                           console.log('fail');
+                           $('#momo').text("we didn't find no recipe. serry")
+                           $('#recipeRR').append($('<img>').addClass('noRec').attr({src: 'http://i.imgur.com/RBMLj.jpg' }))
                         }
                         // $('.modal').modal()
                         //  window.location.href = "info.html"
