@@ -17,7 +17,8 @@ $(document).ready(function(){
             // this loops through the recipe data and eventually creates a div with the recipe image, link, and name
              for (let r of data){
                  let id = r.id
-                 let image = r.image
+                 var image = r.image
+                 var rTitle = r.title
                  let coll = $('<div>').addClass('col s6 m6 l4')
                  let card = $('<div>').addClass('card hoverable')
                  let title = $('<h6>').addClass('card-title center').text(r.title)
@@ -37,30 +38,22 @@ $(document).ready(function(){
                // this allows recipes to be shown after clicking the card
                $('img').click(function(){
                   let target = event.target.id
-                  let title = event.target.data
-                  console.log('target', target);
-                  console.log('this', this);
+                  var title = this.getAttribute('data')
                   $('.modal').modal()
                   $.ajax({
                      method: "GET",
                      url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/${target}/analyzedInstructions`,
                      dataType: 'json',
                      success: function(data){
-                        console.log('data', data);
                         let steps = data[0].steps
-                        let title = event.target.data
-                        console.log('here title',title);
-                        console.log('this inside', this);
-                        // recModal = []
+                        console.log('kevin was definitely right', image);
                         $('div.modal-content').empty()
+                        recTitle = $('<h4>').text(title).attr('style','text-align: center')
+                        $('div.modal-content').append(recTitle)
                         for (s of steps){
-                           console.log('title', title);
                            console.log(s.step);
                            listData = $('<p>').text(s.step)
-                           rTitle = $('<h6>').text(title)
-                           // recModal.push(listData)
                            $('div.modal-content').append(listData)
-                           $('div.modal-content').append(rTitle)
                            // $('div.modal-content').append(recModal)
                         }
                         // $('.modal').modal()
