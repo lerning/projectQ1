@@ -48,7 +48,7 @@ $(document).ready(function(){
                         let steps = data[0].steps
                         console.log('kevin was definitely right', image);
                         $('div.modal-content').empty()
-                        recTitle = $('<h4>').text(title).attr('style','text-align: center')
+                        recTitle = $('<h5>').text(title).attr('style','text-align: center')
                         $('div.modal-content').append(recTitle)
                         for (s of steps){
                            console.log(s.step);
