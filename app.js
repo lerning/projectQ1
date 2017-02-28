@@ -49,7 +49,7 @@ $(document).ready(function(){
                         console.log('kevin was definitely right', image);
                         $('div.modal-content').empty()
                         recTitle = $('<h5>').text(title).attr('style','text-align: center')
-                        $('div.modal-content').append(recTitle)
+                        $('#momo').append(recTitle)
                         for (s of steps){
                            console.log(s.step);
                            listData = $('<p>').text(s.step)
