@@ -9,7 +9,7 @@ $(document).ready(function(){
          let image ;
          $.ajax({
            method: 'GET',
-           url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=${userSearch}&limitLicense=false&number=&ranking=2`,
+           url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=${userSearch}&limitLicense=false&number=12&ranking=1`,
            dataType: 'json',
            success: function(data){
              let ds = data.Search

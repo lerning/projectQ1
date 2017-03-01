@@ -4,7 +4,25 @@ body {
 }
 
 div.nav-wrapper, nav {
-   background-color: rgba(82, 18, 175, 0.56);
+   /*background-color: rgba(82, 18, 175, 0.50);*/
+   background-image: url(02.jpg)
+}
+
+
+ .tabs .tab a, .tabs .tab a:hover, .tabs .tab{
+   color: black;
+}
+
+.tabs.tabs-transparent {
+   background-color: rgba(0, 0, 0, 0.15);
+}
+ul.tabs {
+   background-color: transparent;
+}
+
+.btn {
+   padding-left: 20px;
+   padding-right: 20px;
 }
 
 img {
@@ -37,7 +55,8 @@ img {
 }
 
 button.btn {
-   background-color: rgba(82, 18, 175, 0.76);
+   /*background-color: rgba(82, 18, 175, 0.76);*/
+background-image: url(02.jpg)
 }
 .btn:hover {
    background-color: rgba(82, 18, 175, 0.36);
@@ -48,23 +67,34 @@ input[type=text]:focus:not([readonly]) {
 }
 
 section {
-     min-height: calc(100vh - 250px);
-  }
+     min-height: calc(100vh - 235px);
+}
 
 /*div.push {
    height: 40px;
 }*/
 
 footer.page-footer {
-   background-color: rgba(82, 18, 175, 0.56);
-   /*position: fixed;*/
+   /*background-color: rgba(82, 18, 175, 0.56);*/
+   background-image: url(02.jpg);
+   z-index: 1;
+   background-color: rgba(0, 0, 0, 0.24);
+
    width: 100%;
-   height: auto;
-   /*overflow: auto;*/
+   height: 60%;
+   overflow: auto;
 }
 footer.page-footer .footer-copyright  {
-   background-color: rgba(82, 18, 175, 0.56);
+   /*background-color: rgba(82, 18, 175, 0.56);*/
+   background-color: rgba(0, 0, 0, 0.37);
+   /*background:
+      linear-gradient(
+         rgba(9, 10, 9, 0.34)
+         rgba(9, 10, 9, 0.34)
+      ),
+       url('02.jpg');*/
 }
+
 p.grey-text {
    margin: 0px;
    margin-left: 30%;
