@@ -20,9 +20,13 @@ ul.tabs {
    background-color: transparent;
 }
 
-.btn {
-   padding-left: 20px;
-   padding-right: 20px;
+button.trytry {
+   padding-left: 15px;
+   padding-right: 15px;
+   border-radius: 100%;
+}
+button.aterial-icons{
+
 }
 
 img {
@@ -62,8 +66,9 @@ background-image: url(02.jpg)
    background-color: rgba(82, 18, 175, 0.36);
 }
 input[type=text]:focus:not([readonly]) {
-   border-bottom: 1px solid rgba(82, 18, 175, 0.36);
-   box-shadow: 0 0 1px 0 rgba(82, 18, 175, 0.36);
+   border-bottom: 1px solid black;
+   box-shadow: 0 0 1px 0 black;
+   border-radius: 8px;
 }
 
 section {
@@ -86,7 +91,7 @@ footer.page-footer {
 }
 footer.page-footer .footer-copyright  {
    /*background-color: rgba(82, 18, 175, 0.56);*/
-   background-color: rgba(0, 0, 0, 0.37);
+   background-color: rgba(0, 0, 0, 0.20);
    /*background:
       linear-gradient(
          rgba(9, 10, 9, 0.34)
@@ -97,5 +102,5 @@ footer.page-footer .footer-copyright  {
 
 p.grey-text {
    margin: 0px;
-   margin-left: 30%;
+   margin-left: 7%;
 }
