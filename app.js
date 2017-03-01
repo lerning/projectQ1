@@ -143,8 +143,8 @@ $(document).ready(function(){
                  let card = $('<div>').addClass('card hoverable')
                  let title = $('<h6>').addClass('card-title center').text(r.title)
                  let content = $('<div>').addClass('card-content clicky center')
-                 let link = $('<a>').attr('href', '#modal1')
-                 let recPic = $('<img>').attr({src: 'https://spoonacular.com/recipeImages/' + r.image, id: r.id, data: r.title})
+                 let link = $('<a>').attr('href', '#modal2')
+                 let recPic = $('<img>').attr({src: 'https://spoonacular.com/recipeImages/' + r.image, id: r.id, data: r.title}).addClass('img2')
                  console.log(recPic);
                  $('#Lrecipes').append(coll)
                  coll.append(card)
@@ -157,7 +157,7 @@ $(document).ready(function(){
             //  this clears the search input
                $('input').val('')
 
-               $('img').click(function(){
+               $('.img2').click(function(){
                   let target = event.target.id
                   var title = this.getAttribute('data')
                   var image = this.getAttribute('src');
@@ -202,30 +202,30 @@ $(document).ready(function(){
                       xhr.setRequestHeader("X-Mashape-Authorization", "7D3Xzr7UyvmshVdn9ReVmm3sqT6jp1wMVMljsnJ2QLQ0Ks4Rej");
                       }
                   })
-                  // $.ajax({
-                  //    method: "GET",
-                  //    url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/${target}/information`,
-                  //    dataType: 'json',
-                  //    success: function(data){
-                  //       let trial = data.extendedIngredients
-                  //       console.log('trial', trial);
-                  //       $('#ingredientsII').empty()
-                  //       for (i of trial){
-                  //          console.log(i.originalString);
-                  //          listData = $('<p>').text(i.originalString)
-                  //          $('#ingredientsII').append(listData)
-                  //          // $('div.modal-content').append(recModal)
-                  //       }
-                  //       // $('.modal').modal()
-                  //       //  window.location.href = "info.html"
-                  //    },
-                  //    error: function(){
-                  //       console.log('ERROR!');
-                  //    },
-                  //    beforeSend: function(xhr) {
-                  //     xhr.setRequestHeader("X-Mashape-Authorization", "7D3Xzr7UyvmshVdn9ReVmm3sqT6jp1wMVMljsnJ2QLQ0Ks4Rej");
-                  //     }
-                  // })
+                  $.ajax({
+                     method: "GET",
+                     url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/${target}/information`,
+                     dataType: 'json',
+                     success: function(data){
+                        let trial = data.extendedIngredients
+                        console.log('trial', trial);
+                        $('#ingredientsIII').empty()
+                        for (i of trial){
+                           console.log(i.originalString);
+                           listData = $('<p>').text(i.originalString)
+                           $('#ingredientsIII').append(listData)
+                           // $('div.modal-content').append(recModal)
+                        }
+                        // $('.modal').modal()
+                        //  window.location.href = "info.html"
+                     },
+                     error: function(){
+                        console.log('ERROR!');
+                     },
+                     beforeSend: function(xhr) {
+                      xhr.setRequestHeader("X-Mashape-Authorization", "7D3Xzr7UyvmshVdn9ReVmm3sqT6jp1wMVMljsnJ2QLQ0Ks4Rej");
+                      }
+                  })
 
                })
 
