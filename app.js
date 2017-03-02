@@ -124,13 +124,20 @@ $(document).ready(function(){
    $('button.liquidsB').click(function(e){
       e.preventDefault();
       $('#Lrecipes').empty()
-      userSearch = $('input.Linput').val()
+      let userSearch = $('input.Linput').val()
+      let dropSearch = $('li.active')
+      let ethnicity = dropSearch[0].childNodes[0].innerText
+      let mealType = dropSearch[1].childNodes[0].innerText
+      console.log(ethnicity);
+      console.log(mealType);
+
+      // let ethnicity =
       if (userSearch !== ''){
          let title ;
          let image ;
          $.ajax({
            method: 'GET',
-           url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine=&diet=vegetarian&excludeIngredients=&instructionsRequired=false&intolerances=&limitLicense=false&number=10&offset=0&query=${userSearch}&type=main+course`,
+           url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine=${ethnicity}&diet=vegetarian&excludeIngredients=&instructionsRequired=false&intolerances=&limitLicense=false&number=10&offset=0&query=${userSearch}&type=${mealType}`,
            dataType: 'json',
            success: function(data){
              let ds = data.Search
