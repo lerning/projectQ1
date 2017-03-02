@@ -37,14 +37,28 @@ img {
 .row .col.m6{
    background-color: transparent;
 }
+h6.card-title.center {
+   font-size: 1em;
+}
+
+div.col.s6.m6.l4 {
+   padding-left: 12px;
+   padding-right: 12px;
+}
 
 .noRec {
    width: 100%;
    height: auto;
 }
 
+div.card.hoverable {
+   max-width: 260px;
+
+}
+
 .card .card-content{
    height: 260px;
+   max-width: 260px;
    /*background-color: transparent;*/
    /*background-image: url(ep_naturalwhite.png);*/
 }
@@ -67,8 +81,8 @@ background-image: url(02.jpg)
 }
 input[type=text]:focus:not([readonly]) {
    border-bottom: 1px solid black;
-   box-shadow: 0 0 1px 0 black;
-   border-radius: 8px;
+   box-shadow: 0 0 0 0 black;
+   /*border-radius: 8px;*/
 }
 
 section {

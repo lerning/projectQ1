@@ -1,4 +1,5 @@
 $(document).ready(function(){
+   $('select').material_select();
    // this event listener for the ingrediant search tab
    $('button.solidB').click(function(e){
       e.preventDefault();
@@ -129,7 +130,7 @@ $(document).ready(function(){
          let image ;
          $.ajax({
            method: 'GET',
-           url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine=${userSearch}&diet=vegetarian&excludeIngredients=&instructionsRequired=false&intolerances=&limitLicense=false&number=10&offset=0&query=&type=main+course`,
+           url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine=&diet=vegetarian&excludeIngredients=&instructionsRequired=false&intolerances=&limitLicense=false&number=10&offset=0&query=${userSearch}&type=main+course`,
            dataType: 'json',
            success: function(data){
              let ds = data.Search
