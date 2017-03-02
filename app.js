@@ -126,13 +126,21 @@ $(document).ready(function(){
       $('#Lrecipes').empty()
       let userSearch = $('input.Linput').val()
       let dropSearch = $('li.active')
-      let ethnicity = dropSearch[0].childNodes[0].innerText
-      let mealType = dropSearch[1].childNodes[0].innerText
+
+      let ethnicity = ''
+      let mealType = ''
+
+      if(dropSearch[0] !==  undefined){
+         let ethnicity = dropSearch[0].childNodes[0].innerText
+      }
+      if(dropSearch[1] !==  undefined){
+         mealType = dropSearch[1].childNodes[0].innerText
+      }
+
       console.log(ethnicity);
       console.log(mealType);
 
       // let ethnicity =
-      if (userSearch !== ''){
          let title ;
          let image ;
          $.ajax({
@@ -153,7 +161,7 @@ $(document).ready(function(){
                  let content = $('<div>').addClass('card-content clicky center')
                  let link = $('<a>').attr('href', '#modal2')
                  let recPic = $('<img>').attr({src: 'https://spoonacular.com/recipeImages/' + r.image, id: r.id, data: r.title}).addClass('img2')
-                 console.log(recPic);
+               //   console.log(recPic);
                  $('#Lrecipes').append(coll)
                  coll.append(card)
                  card.append(content)
@@ -169,7 +177,7 @@ $(document).ready(function(){
                   let target = event.target.id
                   var title = this.getAttribute('data')
                   var image = this.getAttribute('src');
-                  console.log('image clicked');
+                  // console.log('image clicked');
                   $('#modal2').modal()
                   $.ajax({
                      method: "GET",
@@ -178,9 +186,9 @@ $(document).ready(function(){
                      success: function(data){
                         $('#recipeRRR').empty()
                         $('#momo2').empty().addClass('center')
-                        console.log('annoying', data.length);
+                        // console.log('annoying', data.length);
                         if (data.length > 0){
-                           console.log('data.0 rec steps', data[0]);
+                           // console.log('data.0 rec steps', data[0]);
                            let steps = data[0].steps
                            // console.log('kevin was definitely right', image);
                            recTitle = $('<h5>').text(title).attr('style','text-align: center')
@@ -247,7 +255,6 @@ $(document).ready(function(){
          })
 
 
-       }
 
    })
 
