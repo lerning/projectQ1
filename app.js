@@ -127,25 +127,25 @@ $(document).ready(function(){
       let userSearch = $('input.Linput').val()
       let dropSearch = $('li.active')
 
-      let ethnicity = ''
-      let mealType = ''
+      var ethnicity = ''
+      var mealType = ''
 
       if(dropSearch[0] !==  undefined){
-         let ethnicity = dropSearch[0].childNodes[0].innerText
+         var ethnicity = dropSearch[0].childNodes[0].innerText
       }
       if(dropSearch[1] !==  undefined){
-         mealType = dropSearch[1].childNodes[0].innerText
+         var mealType = dropSearch[1].childNodes[0].innerText
       }
-
-      console.log(ethnicity);
-      console.log(mealType);
+      console.log('soch', userSearch);
+      console.log('here', ethnicity);
+      console.log('and here', mealType);
 
       // let ethnicity =
          let title ;
          let image ;
          $.ajax({
            method: 'GET',
-           url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine=${ethnicity}&diet=vegetarian&excludeIngredients=&instructionsRequired=false&intolerances=&limitLicense=false&number=10&offset=0&query=${userSearch}&type=${mealType}`,
+           url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine=${ethnicity}&diet=&excludeIngredients=&instructionsRequired=false&intolerances=&limitLicense=false&number=10&offset=0&query=${userSearch}&type=${mealType}`,
            dataType: 'json',
            success: function(data){
              let ds = data.Search
@@ -171,7 +171,8 @@ $(document).ready(function(){
                  content.append(title)
              }
             //  this clears the search input
-               $('input').val('')
+               $('input.Linput').val('')
+
 
                $('.img2').click(function(){
                   let target = event.target.id
