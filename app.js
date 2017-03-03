@@ -129,23 +129,47 @@ $(document).ready(function(){
 
       var ethnicity = ''
       var mealType = ''
+      var diet = ''
+      var intolerances = ''
+      let i = 0
 
+      console.log('d0', dropSearch[1]);
+      
       if(dropSearch[0] !==  undefined){
-         var ethnicity = dropSearch[0].childNodes[0].innerText
+         var ethnicity = dropSearch[i].childNodes[0].innerText
+         i ++
+         console.log('here 1');
       }
-      if(dropSearch[1] !==  undefined){
-         var mealType = dropSearch[1].childNodes[0].innerText
+      if (dropSearch[i] !==  undefined){
+         var mealType = dropSearch[i].childNodes[0].innerText
+         i ++
+         console.log('here 2');
       }
-      console.log('soch', userSearch);
-      console.log('here', ethnicity);
-      console.log('and here', mealType);
+      if (dropSearch[i] !==  undefined){
+         var diet = dropSearch[i].childNodes[0].innerText
+         i++
+         console.log('here 3');
+      }
+      if (dropSearch[i] !==  undefined){
+         var intolerances = dropSearch[i].childNodes[0].innerText
+         intolerances += "," + dropSearch[(i + 1)].childNodes[0].innerText
+      }
+
+      console.log(i);
+      console.log('dropSearch', dropSearch);
+      console.log('search', userSearch);
+      console.log('ethnicity', ethnicity);
+      console.log('mealType', mealType);
+      console.log('diet', diet);
+      console.log('intolerances', intolerances);
+
 
       // let ethnicity =
          let title ;
          let image ;
          $.ajax({
            method: 'GET',
-           url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine=${ethnicity}&diet=&excludeIngredients=&instructionsRequired=false&intolerances=&limitLicense=false&number=10&offset=0&query=${userSearch}&type=${mealType}`,
+           url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine=${ethnicity}&diet=${diet}&excludeIngredients=&instructionsRequired=false&intolerances=${intolerances}&limitLicense=false&number=10&offset=0&query=${userSearch}&type=${mealType}`,
            dataType: 'json',
            success: function(data){
              let ds = data.Search

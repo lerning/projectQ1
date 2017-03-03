@@ -41,10 +41,10 @@
                <!-- This is my input field where users input ingredients -->
               <div class="col s12 offset-m2 m8">
                 <div class="input-field">
-                  <input class="Linput"type="text" style="text-align: center" placeholder="Enter ingredients, seperated by a comma" id="search" name="search" />
+                  <input class="Linput"type="text" style="text-align: center" placeholder="Enter Culinary Keywords (if any)" id="search" name="search" />
                   <div class="input-field col s6">
                     <select>
-                      <option id="selectReset" selected disabled active >any</option>
+                      <option id="selectReset" selected active >any</option>
                       <option value="American">American</option>
                       <option value="British">British (lol)</option>
                       <option value="Cajun">Cajun</option>
@@ -68,7 +68,7 @@
                   </div>
                   <div class="input-field col s6">
                     <select>
-                      <option id='selectReset' selected disabled active>any</option>
+                      <option id='selectReset' selected active>any</option>
                       <option value="Main Course">Main Course</option>
                       <option value="Side Dish">Side Dish</option>
                       <option value="Dessert">Dessert</option>
@@ -82,13 +82,37 @@
                     </select>
                     <label>Type of Meal</label>
                   </div>
+                  <div class="row"></div>
+                  <div class="input-field col s6">
+                    <select>
+                      <option id='selectReset' selected active>any</option>
+                      <option value="vegan">vegan</option>
+                      <option value="vegetarian">vegetarian</option>
+                     <option value="pescatarian">pescatarian</option>
+                    </select>
+                    <label>Diet</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <select multiple>
+                      <option id='selectReset' selected disabled active>none</option>
+                      <option value="dairy">dairy</option>
+                      <option value="egg">egg</option>
+                      <option value="gluten">gluten</option>
+                      <option value="peanut">peanut</option>
+                      <option value="seafood">seafood</option>
+                      <option value="soy">soy</option>
+                      <option value="tree nut">tree nut</option>
+                    </select>
+                    <label>Intolerances</label>
+                  </div>
+
                </div>
 
                 <div class="row"></div>
                <!-- This is the button that activates the get request for recipes -->
               <div class="center">
                 <button class="btn rounded waves-effect waves-light liquidsB" type="submit" name="action">
-                  <i class="large aterial-icons">sumbit</i>
+                  <i class="large aterial-icons">submit</i>
                 </button>
               </div>
             </form>
@@ -98,8 +122,8 @@
             <div class="container">
              <div id="momo2"></div>
              <ul class="tabs">
-                <li class="tab"><a href="#ingredientsIII">ingredients</a></li>
-                <li class="tab"><a class="active" href="#recipeRRR">recipe</a></li>
+                <li class="tab"><a class="active" href="#ingredientsIII">ingredients</a></li>
+                <li class="tab"><a class="" href="#recipeRRR">recipe</a></li>
              </ul>
             </div>
             <div class="modal-content" id='recipeRRR'>
@@ -134,8 +158,8 @@
             <div class="container">
              <div id="momo"></div>
              <ul class="tabs">
-                <li class="tab"><a href="#ingredientsII">ingredients</a></li>
-                <li class="tab"><a class="active" href="#recipeRR">recipe</a></li>
+                <li class="tab"><a class="active" href="#ingredientsII">ingredients</a></li>
+                <li class="tab"><a href="#recipeRR">recipe</a></li>
              </ul>
             </div>
             <div class="modal-content" id='recipeRR'>

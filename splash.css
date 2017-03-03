@@ -1,0 +1,147 @@
+body {
+   background-image: url('http://mooxidesign.com/wp-content/uploads/2015/11/vegetable-set-4.jpg');
+}
+
+h1 {
+   background-color: rgba(0, 0, 0, 0.4);
+   color: white;
+   vertical-align: middle;
+   text-align: center;
+}
+
+#con3 {
+    margin-top: 50px;
+    padding-top: 40px;
+    border-radius: 10%;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    font-family: 'PT Sans', cursive;
+    font-weight: 400;
+    width: 50%;
+    height: 220px;
+    font-size: 3vmin;
+    opacity: 0.4;
+    margin-left: 30%;
+    margin-top: 22%;
+    color: white;
+    min-width: 500px;
+}
+a {
+   color: white;
+}
+
+span {
+    display: block;
+}
+
+.line-1 {
+    position: relative;
+    letter-spacing: 5px;
+}
+
+.line-1:before, .line-1:after {
+    content: "";
+    font-family: FontAwesome;
+    position: relative;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    font-size: 3vmin;
+    margin: 0 30px;
+    top: -5px;
+}
+
+.line-2 {
+    font-family: "Changa One", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 11vmin;
+    letter-spacing: 15px;
+}
+
+.line-3 {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-size: 3vmin;
+    text-transform: uppercase;
+    margin: 10px 0 0;
+    position: relative;
+    letter-spacing: 6px;
+}
+
+.line-3:before, .line-3:after {
+    content: " ";
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    border-top: 1px solid #222222;
+    border-bottom: 1px solid #222222;
+}
+
+.line-3:before {
+    margin: 7px 0 0 -60px;
+}
+
+.line-3:after {
+    margin: 7px 0 0 10px;
+}
+
+.line-4 {
+    width: 100%;
+    position: relative;
+    font-size: 18px;
+    margin: 50px 0 0;
+}
+
+.line-5 {
+    margin: 20px 0 50px;
+    position: relative;
+    text-align: center;
+    margin: 50px auto;
+    display: block;
+    font-size: 3vmin;
+}
+
+.line-5 a {
+    text-decoration: none;
+    display: inline-block;
+    text-align: left;
+    color: #222;
+}
+
+.line-5 a:nth-child(1) {
+    text-align: right;
+}
+
+.line-5 a:nth-child(1):after {
+    content: "";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    position: relative;
+    font-size: 3vmin;
+    text-align: center;
+    width: 90%;
+    top: 4px;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.line-6 {
+    font-family: "PT Sans", sans-serif;
+    font-size: 3vmin;
+    letter-spacing: 5px;
+}
+
+.line-6:before, .line-6:after {
+    content: "";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    position: relative;
+    font-size: 3vmin;
+    margin: 0 10px;
+    top: 2px;
+}
