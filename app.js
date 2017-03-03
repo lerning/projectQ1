@@ -20,7 +20,7 @@ $(document).ready(function(){
                  let id = r.id
                  var image = r.image
                  var rTitle = r.title
-                 let coll = $('<div>').addClass('col s6 m6 l4')
+                 let coll = $('<div>').addClass('col s6 m4 l3')
                  let card = $('<div>').addClass('card hoverable')
                  let title = $('<h6>').addClass('card-title center').text(r.title)
                  let content = $('<div>').addClass('card-content clicky center')
@@ -132,29 +132,41 @@ $(document).ready(function(){
       var diet = ''
       var intolerances = ''
       let i = 0
+      // dropSearch.push(
+      // dropSearch.push(mealType)
+      // dropSearch.push(diet)
+      // dropSearch.push(intolerances)
 
-      console.log('d0', dropSearch[1]);
-      
+
+
+      console.log('d0', dropSearch[0]);
+      console.log('d1', dropSearch[1]);
+      console.log('d2', dropSearch[2]);
+      console.log('d3', dropSearch[3]);
+
+
       if(dropSearch[0] !==  undefined){
          var ethnicity = dropSearch[i].childNodes[0].innerText
          i ++
          console.log('here 1');
       }
-      if (dropSearch[i] !==  undefined){
+      if (dropSearch[1] !==  undefined){
          var mealType = dropSearch[i].childNodes[0].innerText
          i ++
          console.log('here 2');
       }
-      if (dropSearch[i] !==  undefined){
+      if (dropSearch[2] !==  undefined){
          var diet = dropSearch[i].childNodes[0].innerText
          i++
          console.log('here 3');
       }
-      if (dropSearch[i] !==  undefined){
+      if (dropSearch[3] !==  undefined){
          var intolerances = dropSearch[i].childNodes[0].innerText
-         intolerances += "," + dropSearch[(i + 1)].childNodes[0].innerText
       }
-
+      console.log('dd0', dropSearch[0]);
+      console.log('dd1', dropSearch[1]);
+      console.log('dd2', dropSearch[2]);
+      console.log('dd3', dropSearch[3]);
       console.log(i);
       console.log('dropSearch', dropSearch);
       console.log('search', userSearch);
@@ -179,7 +191,7 @@ $(document).ready(function(){
                //   console.log(r);
                  let id = r.id
                  var rTitle = r.title
-                 let coll = $('<div>').addClass('col s6 m6 l4')
+                 let coll = $('<div>').addClass('col s6 m4 l3')
                  let card = $('<div>').addClass('card hoverable')
                  let title = $('<h6>').addClass('card-title center').text(r.title)
                  let content = $('<div>').addClass('card-content clicky center')

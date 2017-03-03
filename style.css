@@ -33,7 +33,7 @@ img {
    width: 100%;
 
 }
-.row .col.m6{
+.row .col.m4{
    background-color: transparent;
 }
 h6.card-title.center {
@@ -42,7 +42,7 @@ h6.card-title.center {
    margin-top: 10px;
 }
 
-div.col.s6.m6.l4 {
+div.col.s6.m4.l3 {
    padding-left: 12px;
    padding-right: 12px;
 }
