@@ -10,7 +10,7 @@ $(document).ready(function(){
          let image ;
          $.ajax({
            method: 'GET',
-           url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=${userSearch}&limitLicense=false&number=12&ranking=1`,
+           url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=${userSearch}&limitLicense=false&number=24&ranking=1`,
            dataType: 'json',
            success: function(data){
              let ds = data.Search
@@ -35,7 +35,7 @@ $(document).ready(function(){
                  content.append(title)
              }
             //  this clears the search input
-               $('input').val('')
+               // $('input').val('')
                // this allows recipes to be shown after clicking the card
                $('img').click(function(){
                   let target = event.target.id
@@ -132,18 +132,6 @@ $(document).ready(function(){
       var diet = ''
       var intolerances = ''
       let i = 0
-      // dropSearch.push(
-      // dropSearch.push(mealType)
-      // dropSearch.push(diet)
-      // dropSearch.push(intolerances)
-
-
-
-      console.log('d0', dropSearch[0]);
-      console.log('d1', dropSearch[1]);
-      console.log('d2', dropSearch[2]);
-      console.log('d3', dropSearch[3]);
-
 
       if(dropSearch[0] !==  undefined){
          var ethnicity = dropSearch[i].childNodes[0].innerText
@@ -163,6 +151,8 @@ $(document).ready(function(){
       if (dropSearch[3] !==  undefined){
          var intolerances = dropSearch[i].childNodes[0].innerText
       }
+
+
       console.log('dd0', dropSearch[0]);
       console.log('dd1', dropSearch[1]);
       console.log('dd2', dropSearch[2]);
@@ -181,7 +171,7 @@ $(document).ready(function(){
          let image ;
          $.ajax({
            method: 'GET',
-           url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine=${ethnicity}&diet=${diet}&excludeIngredients=&instructionsRequired=false&intolerances=${intolerances}&limitLicense=false&number=10&offset=0&query=${userSearch}&type=${mealType}`,
+           url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine=${ethnicity}&diet=${diet}&excludeIngredients=&instructionsRequired=false&intolerances=${intolerances}&limitLicense=false&number=24&offset=0&query=${userSearch}&type=${mealType}`,
            dataType: 'json',
            success: function(data){
              let ds = data.Search
@@ -245,8 +235,6 @@ $(document).ready(function(){
                            $('#momo2').text("we didn't find no recipe. serry")
                            $('#recipeRRR').append($('<img>').addClass('noRec').attr({src: 'http://i.imgur.com/RBMLj.jpg' }))
                         }
-                        // $('.modal2').modal()
-                        //  window.location.href = "info.html"
                      },
                      error: function(){
                         console.log('ERROR!');
@@ -269,8 +257,6 @@ $(document).ready(function(){
                            $('#ingredientsIII').append(listData)
                            // $('div.modal-content').append(recModal)
                         }
-                        // $('.modal').modal()
-                        //  window.location.href = "info.html"
                      },
                      error: function(){
                         console.log('ERROR!');
@@ -279,9 +265,7 @@ $(document).ready(function(){
                       xhr.setRequestHeader("X-Mashape-Authorization", "7D3Xzr7UyvmshVdn9ReVmm3sqT6jp1wMVMljsnJ2QLQ0Ks4Rej");
                       }
                   })
-
                })
-
                },
            error: function(){
              console.log('ruh roh');
@@ -290,11 +274,5 @@ $(document).ready(function(){
             xhr.setRequestHeader("X-Mashape-Authorization", "7D3Xzr7UyvmshVdn9ReVmm3sqT6jp1wMVMljsnJ2QLQ0Ks4Rej");
             }
          })
-
-
-
    })
-
-
-
 })
